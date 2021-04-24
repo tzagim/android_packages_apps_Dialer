@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2017 The Android Open Source Project
+ * And Tzagim 2021 can be used for free while giving credit
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +68,27 @@ public class DialpadCharMappings {
         getCharToKeyMap(KEY_TO_CHARS);
   }
 
+  /** The character mapping for the Hebrew alphabet */
+  private static class Heb {
+    private static final String[] KEY_TO_CHARS = {
+      "" /* 0 */,
+      "" /* 1 */,
+      "דהו" /* 2 */,
+      "אבג" /* 3 */,
+      "מנ" /* 4 */,
+      "יכל" /* 5 */,
+      "זחט" /* 6 */,
+      "רשת" /* 7 */,
+      "צק" /* 8 */,
+      "סעפ" /* 9 */,
+      "" /* * */,
+      "" /* # */,
+    };
+
+    private static final SimpleArrayMap<Character, Character> CHAR_TO_KEY =
+        getCharToKeyMap(KEY_TO_CHARS);
+  }
+
   /** The character mapping for the Russian alphabet */
   private static class Rus {
     private static final String[] KEY_TO_CHARS = {
@@ -120,10 +142,12 @@ public class DialpadCharMappings {
 
   static {
     CHAR_TO_KEY_MAPS.put("bul", Bul.CHAR_TO_KEY);
+    CHAR_TO_KEY_MAPS.put("heb", Heb.CHAR_TO_KEY);
     CHAR_TO_KEY_MAPS.put("rus", Rus.CHAR_TO_KEY);
     CHAR_TO_KEY_MAPS.put("ukr", Ukr.CHAR_TO_KEY);
 
     KEY_TO_CHAR_MAPS.put("bul", Bul.KEY_TO_CHARS);
+    KEY_TO_CHAR_MAPS.put("heb", Heb.KEY_TO_CHARS);
     KEY_TO_CHAR_MAPS.put("rus", Rus.KEY_TO_CHARS);
     KEY_TO_CHAR_MAPS.put("ukr", Ukr.KEY_TO_CHARS);
   }
